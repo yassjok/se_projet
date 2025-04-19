@@ -1,0 +1,56 @@
+		🧠 Qu’est-ce que la pagination ?
+
+Imagine que ton ordinateur ne peut pas mettre tout ton programme en mémoire en même temps.
+Alors il coupe le programme en petits blocs appelés pages.
+Il ne garde en mémoire que les pages nécessaires au bon moment.
+
+👉 Si une page n’est pas en mémoire quand on en a besoin, c’est un défaut de page (page fault). L’ordinateur doit alors aller la chercher sur le disque, ce qui est très lent.
+
+		📦 Qu’est-ce qu’un cadre (frame) ?
+
+
+La mémoire de ton ordinateur est aussi découpée en petits blocs qu’on appelle cadres.
+Chaque page du programme va donc dans un cadre.
+
+Mais… il n’y a qu’un nombre limité de cadres !
+Donc parfois, il faut remplacer une page par une autre ➜ c’est là qu’on utilise un algorithme pour choisir quelle page enlever.
+
+🔁 Pourquoi utiliser des algorithmes de remplacement ?
+Quand la mémoire est pleine, et qu’une nouvelle page doit être chargée, on doit :
+
+Choisir quelle ancienne page retirer.
+
+Mettre la nouvelle page à sa place.
+
+On a plusieurs façons de décider quelle page retirer, et c’est ce qu’on appelle des algorithmes de remplacement.
+
+
+		🔄 Algorithme FIFO (First-In, First-Out)
+
+
+🧠 "La première page entrée est la première à sortir."
+
+Imagine une file d’attente :
+
+Tu mets des pages dans la file.
+
+Quand tu veux en ajouter une et que c’est plein, tu retires la plus ancienne.
+
+📌 Avantage : simple à implémenter.
+📌 Inconvénient : parfois, on supprime une page qui est encore très utile.
+
+
+		🔄 Algorithme LRU (Least Recently Used)
+
+
+🧠 "On enlève la page qu’on n’a pas utilisée depuis le plus longtemps."
+
+C’est comme dans une bibliothèque :
+
+Tu gardes près de toi les livres que tu lis souvent.
+
+Si tu manques de place, tu ranges le livre que tu n’as pas ouvert depuis longtemps.
+
+📌 Avantage : plus intelligent que FIFO.
+📌 Inconvénient : un peu plus compliqué à programmer (il faut suivre l’utilisation des pages).
+
