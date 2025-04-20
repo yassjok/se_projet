@@ -1,0 +1,71 @@
+			💻 Comment fonctionne le programme en C ?
+
+Voici ce que fait ton programme étape par étape :
+
+	Il demande à l’utilisateur :
+	Combien de pages il veut simuler ?
+	Quelle est la séquence de pages ?
+	Combien de cadres sont disponibles ?
+	Il exécute la pagination deux fois :
+	Une fois avec l’algorithme FIFO
+	Une fois avec l’algorithme LRU
+	À chaque fois, il affiche les pages en mémoire après chaque étape.
+	À la fin, il dit combien de défauts de page ont eu lieu pour chaque méthode.
+
+✍️ Exemple : 
+
+	Tu as 3 cadres et tu accèdes aux pages :
+	[1, 2, 3, 1, 4, 5]
+
+Avec FIFO :
+
+	Tu ajoutes 1, 2, 3 → OK
+	1 est déjà là → OK
+	4 ? Pas là → tu retires 1 (le plus ancien)
+	5 ? Pas là → tu retires 2 (le plus ancien maintenant)
+
+Avec LRU :
+	Tu ajoutes 1, 2, 3 → OK
+	1 est là → mis à jour (utilisé récemment) 
+	4 ? Pas là → tu retires 2 (non utilisé depuis longtemps) Même si la page 1 est entrée avant la 2, 
+									elle a été réutilisée, donc elle est protégée.
+	5 ? Pas là → tu retires 3
+
+🎯 Résultat final :
+
+	Tu vois visuellement comment la mémoire change.
+	Tu compares quel algorithme est plus performant.
+	Et tu comprends comment un vrai système d’exploitation gère la mémoire.
+
+
+Resume Final Du programme : 
+
+	Le programme en C simule la gestion de la mémoire par pagination, en demandant à 
+	l'utilisateur une séquence de pages et un nombre de cadres. Il applique ensuite les
+	algorithmes FIFO et LRU pour remplacer les pages et affiche le nombre de défauts de 
+	pages pour chaque méthode. Cela permet de comparer leur efficacité en fonction des accès mémoire.
+
+
+FiFo en Resume  :
+
+	Parcourt une séquence de pages.
+	Simule l’algorithme FIFO de remplacement de pages.
+	Gère les défauts de page et remplacements.
+	Affiche à chaque étape le contenu mémoire.
+	Donne le nombre final de défauts.
+
+LRU en Resume : 
+
+	Si la page demandée existe déjà → pas de défaut
+	Si elle n’existe pas, on :
+	cherche une place vide, sinon
+	Remplace la page la moins récemment utilisée
+	On compte les défauts de pages
+	On affiche l'état des cadres mémoire après chaque opération
+
+
+
+
+	To Run it :
+		 gcc main.c fifo.c lru.c -o pagination 
+		 ./pagination
