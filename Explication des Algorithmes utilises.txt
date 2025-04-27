@@ -1,12 +1,13 @@
+	  
 	  🧠 Qu’est-ce que la pagination ?
 
-   Imagine que ton ordinateur ne peut pas mettre tout ton programme en mémoire en même temps.
-   Alors il coupe le programme en petits blocs appelés pages.
-   Il ne garde en mémoire que les pages nécessaires au bon moment.
+`Imagine que ton ordinateur ne peut pas mettre tout ton programme en mémoire en même temps.
+ Alors il coupe le programme en petits blocs appelés pages.
+ Il ne garde en mémoire que les pages nécessaires au bon moment.
 
       👉 Si une page n’est pas en mémoire quand on en a besoin, c’est un défaut de page (page fault).
- L’ordinateur doit alors aller la chercher sur le disque, ce qui est très lent.
-
+ L’ordinateur doit alors aller la chercher sur le disque dur , ce qui est très lent.
+ 
 		📚 C’est quoi une séquence de pages ?
 
 Une séquence de pages, c’est la liste des pages que ton programme
@@ -21,29 +22,30 @@ Une séquence de pages, c’est la liste des pages que ton programme
 		 qui n’est pas encore dans la mémoire RAM.
 
 👉 Résultat :
+
 	L’ordinateur doit interrompre l’exécution, aller chercher la page sur le disque dur
 	 (lent), et la charger en mémoire.
 
+  
+     📦 Qu’est-ce qu’un cadre (frame) ?
 
-		📦 Qu’est-ce qu’un cadre (frame) ?
-
-     La mémoire de ton ordinateur est aussi découpée en petits blocs qu’on appelle cadres.
- Chaque page du programme va donc dans un cadre.
+    La mémoire de ton ordinateur est aussi découpée en petits blocs qu’on appelle cadres.
+    Chaque page du programme va donc dans un cadre.
 
     Mais… il n’y a qu’un nombre limité de cadres !
-  Donc parfois, il faut remplacer une page par une autre ➜ c’est là qu’on utilise un
-  algorithme pour choisir quelle page enlever.
+    Donc parfois, il faut remplacer une page par une autre ➜ c’est là qu’on utilise un
+    algorithme pour choisir quelle page enlever.
 
 
  	🔁 Pourquoi utiliser des algorithmes de remplacement ?
 
- Quand la mémoire est pleine, et qu’une nouvelle page doit être chargée, on doit :
+   Quand la mémoire est pleine, et qu’une nouvelle page doit être chargée, on doit :
 
- Choisir quelle ancienne page retirer.
+   Choisir quelle ancienne page retirer.
 
-Mettre la nouvelle page à sa place.
+   Mettre la nouvelle page à sa place.
 
-On a plusieurs façons de décider quelle page retirer, et c’est ce qu’on appelle des algorithmes de remplacement.
+   On a plusieurs façons de décider quelle page retirer, et c’est ce qu’on appelle des algorithmes de remplacement.
 
 
 		🔄 Algorithme FIFO (First-In, First-Out)
@@ -61,7 +63,7 @@ Quand tu veux en ajouter une et que c’est plein, tu retires la plus ancienne.
 📌 Inconvénient : parfois, on supprime une page qui est encore très utile.
 
 
-		🔄 Algorithme LRU (Least Recently Used)
+   🔄 Algorithme LRU (Least Recently Used)
 
 
 🧠 "On enlève la page qu’on n’a pas utilisée depuis le plus longtemps."

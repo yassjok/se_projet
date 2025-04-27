@@ -25,6 +25,7 @@ Avec FIFO :
 	5 ? Pas là → tu retires 2 (le plus ancien maintenant)
 
 Avec LRU :
+ 
 	Tu ajoutes 1, 2, 3 → OK
 	1 est là → mis à jour (utilisé récemment) 
 	4 ? Pas là → tu retires 2 (non utilisé depuis longtemps) Même si la page 1 est entrée avant la 2, 
@@ -61,11 +62,8 @@ LRU en Resume :
 	cherche une place vide, sinon
 	Remplace la page la moins récemment utilisée
 	On compte les défauts de pages
-	On affiche l'état des cadres mémoire après chaque opération
+	On affiche l'état des frames mémoire après chaque opération
 
-
-
-
-	To Run it :
+To Run it :
 		 gcc main.c fifo.c lru.c -o pagination 
 		 ./pagination
